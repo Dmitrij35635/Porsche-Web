@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche | Showroom & Configurator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">PORSCHE</a>
+            <nav class="nav">
+                <a href="#showroom">Модели</a>
+                <a href="#configurator">Конфигуратор</a>
+                <a href="#features">Инновации</a>
+            </nav>
+            <a href="#configurator" class="btn-primary">Записаться на тест-драйв</a>
+        </div>
+    </header>
+
+    <!-- Главный экран с интерактивным слайдером авто -->
+    <section class="hero" id="showroom">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="overlay"></div>
+        
+        <div class="hero-content">
+            <div class="car-info active-slide" data-index="0">
+                <span class="sub-title">Легенда трека</span>
+                <h1 class="car-title">911 GT3 RS</h1>
+                <p class="car-desc">Создан без компромиссов. Аэродинамика гоночного болида, допущенная дорогами общего пользования.</p>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-val">3.2 с</span>
+                        <span class="spec-label">0-100 км/ч</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">525 л.с.</span>
+                        <span class="spec-label">Мощность</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">296 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-info" data-index="1">
+                <span class="sub-title">Электрическое будущее</span>
+                <h1 class="car-title">Taycan Turbo S</h1>
+                <p class="car-desc">Чистокровный спорткар на электротяге. Мгновенный крутящий момент и непревзойденный драйв.</p>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-val">2.8 с</span>
+                        <span class="spec-label">0-100 км/ч</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">761 л.с.</span>
+                        <span class="spec-label">Мощность (Overboost)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">260 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-info" data-index="2">
+                <span class="sub-title">Икона выносливости</span>
+                <h1 class="car-title">917K Legend</h1>
+                <p class="car-desc">Исторический триумфатор Ле-Мана, изменивший представление о скорости и мощи в автоспорте.</p>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-val">2.3 с</span>
+                        <span class="spec-label">0-100 км/ч</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">600 л.с.</span>
+                        <span class="spec-label">Двигатель V12</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-val">360 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки управления и подсказка -->
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn">&#10094;</button>
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+            <button class="slider-btn" id="nextBtn">&#10095;</button>
+        </div>
+        <div class="keyboard-tip">💡 Используй стрелки на клавиатуре `←` `→` для перелистывания</div>
+    </section>
+
+    <!-- Интерактивный конфигуратор цвета -->
+    <section class="configurator" id="configurator">
+        <div class="container">
+            <h2>Персональный Конфигуратор</h2>
+            <p class="section-desc">Настройте свой идеальный Porsche прямо сейчас</p>
+            
+            <div class="config-box">
+                <div class="car-preview" id="carPreviewBox">
+                    <div class="preview-badge" id="previewBadgeColor">Guard Red</div>
+                    <div class="preview-car-image" id="previewCarImg">🏎️</div>
+                </div>
+                
+                <div class="config-options">
+                    <div class="option-group">
+                        <h3>1. Выберите цвет кузова</h3>
+                        <div class="color-picker">
+                            <div class="color-btn red active" data-color="#d50000" data-name="Guard Red" onclick="changeColor('#d50000', 'Guard Red', '🏎️')"></div>
+                            <div class="color-btn black" data-color="#111111" data-name="Jet Black Metallic" onclick="changeColor('#111111', 'Jet Black Metallic', '🚙')"></div>
+                            <div class="color-btn silver" data-color="#b0bec5" data-name="GT Silver Metallic" onclick="changeColor('#b0bec5', 'GT Silver Metallic', '🚗')"></div>
+                            <div class="color-btn yellow" data-color="#ffd600" data-name="Racing Yellow" onclick="changeColor('#ffd600', 'Racing Yellow', '🏎️')"></div>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h3>2. Пакет отделки</h3>
+                        <label class="checkbox-label"><input type="checkbox" id="carbonOpt" onchange="calcTotal()"> Карбоновые элементы экстерьера (+€5,400)</label>
+                        <label class="checkbox-label"><input type="checkbox" id="wheelsOpt" onchange="calcTotal()"> Кованые диски 21" GT3 (+€3,200)</label>
+                    </div>
+
+                    <div class="total-price-box">
+                        <span>Итоговая стоимость:</span>
+                        <h3 id="totalPrice">€225,400</h3>
+                    </div>
+
+                    <button class="btn-primary full-width" onclick="alert('Конфигурация успешно сохранена! Менеджер свяжется с вами.')">Забронировать сборку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Скрипт интерактивности -->
+    <script>
+        const backgrounds = [
+            'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80")'
+        ];
+
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.car-info');
+        const dots = document.querySelectorAll('.dot');
+        const heroBg = document.getElementById('heroBg');
+
+        function updateSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active-slide'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active-slide');
+            dots[index].classList.add('active');
+            heroBg.style.backgroundImage = backgrounds[index];
+            currentIndex = index;
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide(currentIndex);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentIndex);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateSlide(index);
+            });
+        });
+
+        // Управление клавиатурой (стрелки влево/вправо)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide(currentIndex);
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide(currentIndex);
+            }
+        });
+
+        // Конфигуратор логика
+        function changeColor(hex, name, emoji) {
+            document.getElementById('carPreviewBox').style.background = hex;
+            document.getElementById('previewBadgeColor').innerText = name;
+            document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function calcTotal() {
+            let base = 215000;
+            if (document.getElementById('carbonOpt').checked) base += 5400;
+            if (document.getElementById('wheelsOpt').checked) base += 3200;
+            document.getElementById('totalPrice').innerText = '€' + base.toLocaleString();
+        }
+
+        // Инициализация фона
+        heroBg.style.backgroundImage = backgrounds[0];
+    </script>
+</body>
+</html>
